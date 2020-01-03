@@ -1,0 +1,8 @@
+.DS_Store
+.stack-work
+dist/
+.hspec-failures
+*.cabal
+cabal-helper*build/
+.vscode/
+.cpcache/

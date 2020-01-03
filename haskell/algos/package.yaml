@@ -1,0 +1,86 @@
+name:                algos
+version:             0.1.0.0
+github:              "dktn/algos"
+license:             BSD3
+author:              "Adam Szlachta"
+maintainer:          "adam.szlachta@gmail.com"
+copyright:           "2019 Adam Szlachta"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/algos#readme>
+
+default-extensions: &default-extensions
+  # Syntax
+  - NoImplicitPrelude
+  - ExplicitNamespaces
+  - LambdaCase
+  - MultiWayIf
+  - NamedFieldPuns
+  - NumDecimals
+  - OverloadedLabels
+  - PackageImports
+  - TupleSections
+  - TypeOperators
+  - ViewPatterns
+  - NumericUnderscores
+
+  # Serious stuff
+  - ConstraintKinds
+  - DataKinds
+  - DefaultSignatures
+  - DeriveFunctor
+  - DeriveGeneric
+  - DerivingVia
+  - FlexibleContexts
+  - FlexibleInstances
+  - GADTs
+  - MultiParamTypeClasses
+  - OverloadedStrings
+  - PatternSynonyms
+  - PolyKinds
+  - RankNTypes
+  - ScopedTypeVariables
+  - TypeApplications
+  - TypeFamilies
+  - GeneralizedNewtypeDeriving
+
+dependencies:
+- base >= 4.7 && < 5
+- universum
+- containers
+- text
+
+library:
+  source-dirs: src
+
+executables:
+  algos:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - algos
+
+tests:
+  algos-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - algos
